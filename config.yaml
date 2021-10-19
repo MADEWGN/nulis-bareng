@@ -1,0 +1,15 @@
+baseURL: "https://example.com"
+languageCode: "id-id"
+title: "NULIS BARENG"
+theme: "hugo-theme-novela"
+pygmentsstyle: 'monokai'
+paginate: 6
+social:
+  twitter: "#"
+  github: "#"
+  instagram: "#"
+  linkedin: "#"
+  dribbble: "#"
+  youtube: "#"
+taxonomies:
+  author: Made Wiguna
