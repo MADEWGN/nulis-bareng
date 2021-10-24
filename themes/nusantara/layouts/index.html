@@ -1,0 +1,82 @@
+{{ define "main" }}
+   
+    <header class="hero is-danger is-medium">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+            </div>
+        </div>
+    </header>
+
+
+    <section class="section counter-panel">
+        <div class="container">
+            <div class="columns">
+                <div class="box hero column is-8 mx-auto">
+                    <h2 class="title has-text-centered pt-5">Hugo Indonesia</h2>
+                    <nav class="level is-mobile hero-body">
+                        <div class="level-item has-text-centered">
+                            <div>
+                                <a href="https://t.me/gohugoid/" target="_blank">
+                                    <span class="icon">
+                                        <i class="fas fa-users fa-4x has-text-info"></i>
+                                    </span>
+                                    <p class="heading">Members</p>
+                                    <p class="title" id="member-count">0</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="level-item has-text-centered">
+                            <div>
+                                <span class="icon">
+                                    <i class="fas fa-calendar-alt fa-4x has-text-warning"></i>
+                                </span>
+                                <p class="heading">Events</p>
+                                <p class="title">0</p>
+                            </div>
+                        </div>
+                        <div class="level-item has-text-centered">
+                            <div>
+                                <a href="/showcase/">
+                                    <span class="icon">
+                                        <i class="fas fa-globe-asia fa-4x has-text-primary"></i>
+                                    </span>
+                                    <p class="heading">Websites</p>
+                                    <p class="title">{{ len .Site.Data.showcase }}</p>
+                                </a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-4 is-offset-1 has-text-center">
+                    <img src="/img/status-update.svg" alt="/img/status-update.svg" title="About Us" width="400" />
+                </div>
+                <div class="column is-6">
+                    <h2 class="title">About Us</h2>
+                    <p>Hugo Indonesia adalah komunitas pengguna dan pengembang Hugo di Indonesia.
+                        Mulai berdiri sejak 18 Desember 2017 (di Telegram). Komunitas ini bertujuan untuk belajar dan
+                        berbagi segala hal tentang Hugo Static Site Generator dan JAM Stacks.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+
+    <script>
+        fetch("https://gohugoid.glitch.me/member-count")
+            .then(response => response.json())
+            .then(data => {
+                document.querySelector("#member-count").innerHTML = data;
+            });
+    </script>
+
+{{ end }}
